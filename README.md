@@ -1,2 +1,2 @@
 # ReactStudy
-## 🧾 Blog 프로젝트
+## Blog 프로젝트
