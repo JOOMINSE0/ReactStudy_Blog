@@ -9,6 +9,7 @@ function App() {
   let [따봉, 따봉변경] = useState([0,0,0]);
   let [modal, setModal] = useState(false);
   let [title, setTitle] = useState(0);
+  let [입력값, 입력값변경] = useState('');
 
   return (
     <div className="App">
@@ -51,11 +52,22 @@ function App() {
             따봉변경(copy)  
           }}>👍</span> {따봉[i]} </h4>
           <p>2월 17일 발행</p>
+          <button onClick={()=>{
+            let copy = [...글제목];
+            copy.splice(i,1);
+            글제목변경(copy);
+          }}>삭제</button>
         </div>
         )
       })
      }
-    <input></input>
+    <input onChange={(e) => {입력값변경(e.target.value) //비동기처리방식
+    }}></input>
+    <button onClick={()=>{
+      let copy = [...글제목];
+      copy.unshift(입력값);
+      글제목변경(copy);
+    }}>글발행</button>
 
      
     {
